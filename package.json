@@ -1,0 +1,31 @@
+{
+  "name": "trip-management-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanketAgwl/Trip-Management-System.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SanketAgwl/Trip-Management-System/issues"
+  },
+  "homepage": "https://github.com/SanketAgwl/Trip-Management-System#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cassandra-driver": "^4.6.3",
+    "cors": "^2.8.5",
+    "css": "^3.0.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.0.0"
+  }
+}

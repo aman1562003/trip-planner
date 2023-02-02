@@ -1,0 +1,79 @@
+<%- include('header') %>
+
+	<body>
+		<div style="margin-bottom: 10vh;">
+		<div class="login-form">
+			<h1>Find source and destination city and mode of travel</h1>
+			<form action="/bus" method="POST">
+				<input type="text" name="city1" placeholder="Source City" required>
+				<input type="text" name="city2" placeholder="Destination City" required>
+				<button type="submit">OK</button>
+			</form>
+			<!-- <form action ='train' method='GET'>
+			<button type="submit">Train</button>
+			</form> -->
+			<!-- </form> -->
+		</div>
+
+	</div>
+
+
+		<div class="container"style="align-content: flex;">
+			<!-- <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2> -->
+		
+		
+			<h2>Bus facilities</h3>
+		
+			<ul class="responsive-table">
+				<div class="table-header">
+					<div class="header__item"> </div>
+					<div class="header__item">Service Provider</div>
+					<div class="header__item"> </div>
+					<div class="header__item">Bus Number</div>
+					<div class="header__item"> </div>
+					<div class="header__item">AC</div>
+					<div class="header__item"> </div>
+
+				</div>
+			
+			
+				<% console.log(data1) %>
+					<% if (typeof data1 !=='undefined' && data1.length) { %>
+						<% for(var i=0; i < data1.length; i++) { %>
+
+							<li class="table-row">
+								<div class="table-data" data-label="Amount">
+									<%= data1[i].survice_provider %>
+								</div>
+								<div class="table-data" data-label="Job Id">
+									<%= data1[i].bus_id %>
+								</div>
+								<div class="table-data" data-label="Customer Name">
+									<%= data1[i].is_ac==='t' ? "Y" : "N" %>
+								</div>
+							</li>
+							<% } %>
+								<% } %>
+			</ul>
+		</div>
+		
+
+
+		
+
+
+
+	</body>
+
+	</html>
+
+
+
+
+
+	</div>
+
+
+
+
+	<%- include('footer') %>

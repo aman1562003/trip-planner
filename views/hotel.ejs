@@ -1,0 +1,75 @@
+<%- include('header') %>
+
+	<body>
+
+
+
+
+
+		<div class="container" style="align-content: flex;">
+			<h2>Hotels We offer </h3>
+
+				<ul class="responsive-table">
+					<div class="table-header">
+						<div class="header__item"> </div>
+						<div class="header__item">Name</div>
+						<div class="header__item"> </div>
+						<div class="header__item">Ratings</div>
+						<div class="header__item"> </div>
+						<div class="header__item">Locality</div>
+						<div class="header__item"> </div>
+						<div class="header__item">City </div>
+						<div class="header__item"> </div>
+
+					</div>
+
+					<% for(var i=0; i < data1.length; i++) { %>
+						<li class="table-row">
+							<div class="table-data" data-label="Job Id">
+								<%= data1[i].hotel_name%>
+							</div>
+							<div class="table-data" data-label="Job Id">
+								<%= data1[i].ratings %>
+							</div>
+							<div class="table-data" data-label="Job Id">
+								<%= data1[i].locality_name%>
+							</div>
+							<div class="table-data" data-label="Job Id">
+								<%= data1[i].city_name %>
+							</div>
+						</li>
+						<% } %>
+				</ul>
+		</div>
+
+		<div class="login-form">
+			<h1>Choose hotel for reservation</h1>
+			<form action="/addhotel" method="POST">
+				<input type="text" name="busid" placeholder="Hotel Name" required>
+				<!-- <input type="text" name="city1" placeholder="locality_id" required> -->
+				<input type="text" name="dd" placeholder="CheckIn date" required>
+				<input type="text" name="st" placeholder="Room Type" required>
+				<button type="submit">Enter</button>
+			</form>
+			<br>
+		</div>
+
+		<!-- 
+		<div class="login-form">
+			<h1>Add Bus</h1>
+			<form action="auth" method="POST">
+				<input type="text" name="city" placeholder="CITY NAME" required>
+			</form>
+			<form action="/nearbycity" method="GET">
+                <button type="submit">Nearby Cities</button>
+                <button type="submit">Hotels</button>
+                <button type="submit">Place To Visit</button>
+                <button type="submit">Restraunts</button>
+                <button type="submit">Locality</button>
+			</form>
+		</div> -->
+
+		<%- include('footer') %>
+	</body>
+
+	</html>

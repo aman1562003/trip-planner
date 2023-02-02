@@ -1,0 +1,105 @@
+<%- include('header') %>
+
+	<body>
+		<div style="display: flex;background-color: #344928a1; ">
+			<div class="container" style="min-width: 256px;">
+				<!-- <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2> -->
+				<ul class="responsive-table">
+					<div class="table-header">
+						<div class="header__item"></div>
+						<div class="header__item">place to visit in <%= data4.city_name %> </div>
+						<div class="header__item"></div>
+						
+
+					</div>
+					<% for(var i=0; i < data4.length; i++) { %>
+
+						<li class="table-row">
+							<div class="table-data" data-label="Job Id">
+								<a href="<%= data4[i].link %>" style="
+									text-decoration: none;
+									color: black;
+								"><%= data4[i].place_name %></a>
+							</div>
+							
+						</li>
+						<% } %>
+
+							<!-- <button id="myButton" onclick="showHide()">Click me</button> -->
+
+				</ul>
+			</div>
+			<div class="container" style="min-width: 256px;">
+				<!-- <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2> -->
+				<ul class="responsive-table">
+					<div class="table-header">
+						<div class="header__item"></div>
+						<div class="header__item">Nearby Cities</div>
+						<div class="header__item"></div>
+						
+
+					</div>
+					<% for(var i=0; i < data1.length; i++) { %>
+
+						<li class="table-row">
+							<div class="table-data" data-label="Job Id">
+								<%= data1[i].nearby_city %>
+							</div>
+							
+						</li>
+						<% } %>
+
+							<!-- <button id="myButton" onclick="showHide()">Click me</button> -->
+
+				</ul>
+			</div>
+			<div class="container"style="min-width: 256px;">
+				<!-- <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2> -->
+				<ul class="responsive-table">
+					<div class="table-header">
+						
+						<div class="header__item"></div>
+						<div class="header__item">Hotels</div>
+						<div class="header__item"></div>
+						
+
+					</div>
+					<% for(var i=0; i < data2.length; i++) { %>
+
+						<li class="table-row">
+
+							<div class="table-data" data-label="Job Id">
+								<%= data2[i].hotel_name%>
+							</div>
+
+						</li>
+						<% } %>
+				</ul>
+			</div>
+			<div class="container"style="min-width: 256px;">
+				<!-- <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2> -->
+				<ul class="responsive-table">
+					<div class="table-header">
+						
+						<div class="header__item"></div>
+						<div class="header__item">Restaurants</div>
+						<div class="header__item"></div>
+
+					</div>
+					<% for(var i=0; i < data3.length; i++) { %>
+
+						<li class="table-row">
+							<div class="table-data" data-label="Job Id">
+								<%= data3[i].restaurant_name %>
+							</div>
+						</li>
+						<% } %>
+				</ul>
+			</div>
+		</div>
+		
+
+		<%- include('footer') %>
+	</body>
+
+	</html>

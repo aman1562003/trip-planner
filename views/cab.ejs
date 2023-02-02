@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>My Trip Planner</title>
+		<link rel="icon" type="image/png" href="https://img.icons8.com/doodle/48/000000/newsletter.png"/>
+        <link rel="stylesheet" href="css/style.css">
+
+		<style>
+            
+			/* body{
+				background-color: aliceblue;
+			} */
+            
+		
+		</style>
+	</head>
+    <header>
+
+        <!-- our main logo -->
+        <a id="logo" href="/">
+            <img src="img/avatar.jpeg" alt="Logo">
+            <span>My Trip Planner</span>
+        </a>
+
+        <!-- main navigation links -->
+        <nav>
+            <ul>
+                <li><a href="explore">Explore City</a></li>
+                <li><a href="book">Book Travel</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="sign">Sign Up</a></li>
+            </ul>
+        </nav>
+
+    </header>
+	<body>
+        <div class="container">
+            <!-- <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2> -->
+            <ul class="responsive-table">
+                <div class="table-header">
+                <div class="header__item">Cab Id</div>
+                <div class="header__item">Cab Type</div>
+                <div class="header__item">Cost Per Day</div>
+                </div>
+		<% for(var i=0; i < data1.length; i++) { %>
+
+              <li class="table-row">
+                <div class="table-data" data-label="Job Id"><%= data1[i].cab_service_id %></div>
+                <div class="table-data" data-label="Customer Name"> <%= data1[i].cab_type %></div>
+                <div class="table-data" data-label="Amount"> <%= data1[i].cost_per_day %> </div>
+              </li>
+        <% } %>
+            </ul>
+        </div>
+
+	</body>
+</html>

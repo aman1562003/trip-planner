@@ -1,0 +1,112 @@
+<%- include('header') %>
+
+  <body>
+    <div class="container">
+      <!-- <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2> -->
+      <ul class="responsive-table">
+        <div class="table-header">
+          <div class="header__item">Bus Id</div>
+          <div class="header__item"> </div>
+          <div class="header__item">Bus Departure Date</div>
+          <div class="header__item"> </div>
+          <div class="header__item">Bus Seat Type</div>
+          <div class="header__item"> </div>
+          <div class="header__item">Seats Available </div>
+          <div class="header__item"> </div>
+          <div class="header__item">Cost</div>
+          <div class="header__item"> </div>
+          <div class="header__item" style="
+                margin-left: -66px;
+                margin-right: -39px;
+            ">ADD <input type="number" id="seatCount" placeholder="no.of seats" style="    width: 91px;
+                  height: 30px;"></div>
+          <div class="header__item"> </div>
+          <div class="header__item" style="margin-right: 13px;margin-left: -14px;">Delete </div>
+        </div>
+
+
+        <% for(var i=0; i < data1.length; i++) { %>
+
+          <li class="table-row">
+            <div class="table-data" data-label="Job Id">
+              <%= data1[i].bus_id %>
+            </div>
+            <div class="table-data" data-label="Customer Name">
+              <%= data1[i].departure_date %>
+            </div>
+            <div class="table-data" data-label="Job Id">
+              <%= data1[i].source %>
+            </div>
+            <div class="table-data" data-label="Amount">
+              <%= data1[i].seat_type %>
+            </div>
+            <div class="table-data" data-label="Amount">
+              <%= data1[i].total_available_seats %>
+            </div>
+            <div class="table-data" data-label="Amount">
+              <%= data1[i].cost %>
+            </div>
+            <div class="table-data" data-label="Actions">
+
+              <button class="add-button" style="margin-top: 0px;
+                  width: 91px; margin-bottom: 10px; border: solid;border-color: #000000d1;background-color: #000000c4;"
+                onclick="addRow(<%= data1[i].bus_id %>, document.getElementById('seatCount').value)">Add</button>
+            </div>
+            <div class="table-data" data-label="Actions">
+
+              <button class="add-button" style="margin-top: 0px;
+                  width: 91px; margin-bottom: 10px;
+                  border-radius: 2px;
+                  
+                  border: solid;
+                  color: black;
+                  background-color: #ffffff00;
+                  border-color: black;
+                  "
+                onclick="deleteRow(<%= data1[i].bus_id %>, document.getElementById('seatCount').value)">Delete</button>
+
+
+            </div>
+
+            <!-- <div class="table-data" data-label="Actions">
+                  <button class="add-button" onclick="addRow(<%= data1[i].bus_id %>)">Add</button>
+                </div> -->
+
+          </li>
+          <% } %>
+      </ul>
+    </div>
+
+    <!-- </div>
+    <div class="login-form">
+      <h1>Choose source and destination city and mode of travel</h1>
+      <form action="/addbus" method="POST">
+        <input type="text" name="busid" placeholder="Bus ID" required>
+        <input type="text" name="city1" placeholder="Source City" required>
+        <input type="text" name="city2" placeholder="Destination City" required>
+        <input type="text" name="dd" placeholder="Departure date" required>
+        <input type="text" name="st" placeholder="Seat Type" required>
+        <input type="text" name="noseat" placeholder="No of Seats" required>
+        <button type="submit">ADD Bus</button>
+      </form>
+    </div>
+
+
+    <div class="login-form">
+      <h1>Delete A Bus Trip</h1>
+      <form action="deletebus" method="POST">
+        <input type="text" name="id" placeholder="Bus Id" required>
+        <input type="text" name="city1" placeholder="Source City" required>
+        <input type="text" name="city2" placeholder="Destination City" required>
+        <input type="text" name="dd" placeholder="Departure date" required>
+        <input type="text" name="st" placeholder="Seat Type" required>
+        <button type="submit">Delete</button> -->
+    <!-- <h3>Result</h3> -->
+    <!-- 
+    </div> -->
+
+  </body>
+
+  </html>
+
+  <%- include('footer') %>
